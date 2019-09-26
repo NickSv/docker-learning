@@ -6,4 +6,4 @@ before_install:
   - docker build -t nicks/docker-learning -f Dockerfile.dev .
 
 script:
-  - docker run nicks/docker-learning npm run test -- --coverage
+  - docker run -e CI=true nicks/docker-learning npm run test
