@@ -7,3 +7,17 @@ before_install:
 
 script:
   - docker run -e CI=true nicks/docker-learning npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-learning"
+  env: "[Lookup on AWS in Elastic Beanstalk right after docker-learning in path at top]"
+  bucket_name: "[Lookup on AWS under S3 service -> bucket name]"
+  bucket_path: "docker-learning"
+  on:
+    branch: master
+  access_key_id: 
+    secure: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "AWS_SECRET_KEY"
