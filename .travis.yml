@@ -12,12 +12,12 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker-learning"
-  env: "[Lookup on AWS in Elastic Beanstalk right after docker-learning in path at top]"
-  bucket_name: "[Lookup on AWS under S3 service -> bucket name]"
+  env: "DockerLearning-env"
+  bucket_name: "elasticbeanstalk-us-east-2-543551216514"
   bucket_path: "docker-learning"
   on:
     branch: master
   access_key_id: 
-    secure: $AWS_ACCESS_KEY
+    secure: "$AWS_ACCESS_KEY"
   secret_access_key:
-    secure: "AWS_SECRET_KEY"
+    secure: "$AWS_SECRET_KEY"
